@@ -1,0 +1,45 @@
+{
+  "name": "marker-map",
+  "version": "0.1.0",
+  "description": "Marker Map is simple dynamic place marker by position to image and support responsive.",
+  "main": "dist/marker-map.cjs.js",
+  "module": "dist/marker-map.esm.js",
+  "browser": "dist/marker-map.umd.min.js",
+  "scripts": {
+    "build": "rollup -c ./config/rollup.config.js",
+    "dev": "rollup -c ./config/rollup.config.js -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angkarn/marker-map.git"
+  },
+  "keywords": [
+    "marker",
+    "map",
+    "place",
+    "position",
+    "treasure",
+    "hunt",
+    "background",
+    "point",
+    "dynamic",
+    "responsive"
+  ],
+  "author": "Angkarn Pukawanach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angkarn/marker-map/issues"
+  },
+  "homepage": "https://github.com/angkarn/marker-map#readme"
+}

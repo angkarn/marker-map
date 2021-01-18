@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Marker Map</title>
+    <link rel="icon" href="favicon.ico" />
+    <style>
+        #show {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="show"></div>
+    <button onclick="randomActive()">Random Active</button>
+    <button id="addBtn" onclick="add()">Add</button>
+    <script src="../dist/marker-map.umd.min.js"></script>
+    <script>
+        // import MarkerMap from '../dist/marker-map.iife.js'
+        // import { MarkerMap } from '../main.js';
+        // console.log(MarkerMap)
+
+        let markers = [
+            { id: "b07", width: 12, top: 28, left: 64, img: "./assets/place.svg", meta: { test: 'abc' } },
+            { width: 12, top: 56, left: 40, img: "./assets/home.svg" },
+        ]
+        let addPlaces = [
+            { id: "3", width: 12, top: 70, left: 70, img: "./assets/info.svg", meta: { aaa: 'xyz' } },
+            { id: "4", width: 12, top: 37, left: 16, img: "./assets/high-priority.svg" },
+        ]
+        let countAdd = 0
+
+        const markerMap = new MarkerMap()
+        markerMap.render('#show', { background: "./assets/treasure-map.jpg", markers: markers })
+
+        markerMap.on('click', (e, opt) => {
+            if (confirm(`Want to delete:\n ID: ${opt.id}\n${JSON.stringify(opt.meta)}`)) markerMap.remove(opt.id)
+        })
+
+        document.getElementById('addBtn').onclick = () => {
+            if (countAdd >= addPlaces.length) return
+            markerMap.add(addPlaces[countAdd]);
+            countAdd++;
+        }
+
+
+        function randomActive() {
+            markerMap.activeAll()
+            const allMarkers = markerMap.getAll()
+            const markerRand = allMarkers[Math.floor(Math.random() * allMarkers.length)];
+            markerMap.inactive(markerRand.id)
+        }
+
+    </script>
+</body>
+
+</html>
