@@ -1,6 +1,6 @@
 {
   "name": "marker-map",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Marker Map is simple dynamic place marker by position to image and support responsive.",
   "main": "dist/marker-map.cjs.js",
   "module": "dist/marker-map.esm.js",
