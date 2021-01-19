@@ -2,8 +2,10 @@
 
 Marker Map is simple dynamic place marker by position to image and support responsive.
 
+![enter image description here](https://github.com/angkarn/marker-map/raw/main/example/assets/screenshot.jpg)
+
 ### Features!
-  - Custom marker image and background.
+  -  Custom marker image and background.
   - Set active or inactive of marker (will be opacity reduce).
   - You can build game or event like treasure hunt.
   - And it's responsive.
@@ -58,19 +60,19 @@ markerMap.render("#show", {
 ```
 
 ### Methods
-| Method | Description |
+|Method|Description|
 |-|-|
 | .render(\<string> **query selector**, \<object> **render options**) | render with [*render options*](#render) |
 | .add(\<object> ***marker options***) | add marker [*marker options*](#marker) |
-| .remove(\<string> ***marker id***) | remove marker |
+| .remove(\<string> ***marker id***) | remove marker|
 | .removeAll() | remove marker|
-| .active(\<string> ***marker id***) | set marker active |
-| .inactive(\<string> ***marker id***) | set marker inactive |
-| .activeAll() | set active all marker |
-| .inactiveAll() | set inactive all marker |
-| .getAll(\<string> **filter**, \<string> **output type**) | get list markers by **filter** `all` (default), `active`, `inactive` will return by **output type** `json` [*marker object*](#marker) (default), `dom` |
-| .on(\<string> **type event**, \<function> **callback function**) | create event on markers *(ex. click, hover)*, will return callback **event object** |
-| .destroy()| destroy render |
+| .active(\<string> ***marker id***) | set marker active|
+| .inactive(\<string> ***marker id***) | set marker inactive|
+|.activeAll()|set active all marker|
+|.inactiveAll()|set inactive all marker|
+|.getAll(\<string> **filter**, \<string> **output type**)|get list markers by **filter** `all` (default), `active`, `inactive` will return by **output type** `json` [*marker object*](#marker) (default), `dom` |
+|.on(\<string> **type event**, \<function> **callback function**)|create event on markers *(ex. click, hover)*, will return callback **event object**|
+|.destroy()|destroy render|
 
 
 ### Options
