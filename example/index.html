@@ -8,16 +8,56 @@
     <link rel="icon" href="favicon.ico" />
     <style>
         #show {
+            margin: 5px auto;
+            width: 100%;
             max-width: 400px;
-            margin: 0 auto;
+        }
+
+        #action {
+            margin: 15px;
+            text-align: center;
+        }
+
+        button {
+            background: #e8e8e8;
+            box-shadow: 0 0 2px #00000038;
+            border: none;
+            padding: 5px;
+            margin: 5px 3px;
+            min-width: 100px;
+            border-radius: 6px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #detail {
+            margin: 5px auto;
+            /* border: 1px solid #707070; */
+            min-width: 300px;
+            max-width: 400px;
+            width: 100%;
+            /* min-height: 250px; */
         }
     </style>
 </head>
 
 <body>
-    <div id="show"></div>
-    <button onclick="randomActive()">Random Active</button>
-    <button id="addBtn" onclick="add()">Add</button>
+    <div class="content">
+
+        <div id="show">
+
+        </div>
+        <div id="action">
+            <button id="addBtn" onclick="add()">Add</button>
+            <button onclick="randomActive()">Random Active</button>
+            <button onclick="listData()">Get Marker Data</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+
+        <div id="detail"></div>
+    </div>
+
+    <script src="https://unpkg.com/json-formatter-js"></script>
     <script src="../dist/marker-map.umd.min.js"></script>
     <script>
         // import MarkerMap from '../dist/marker-map.iife.js'
@@ -28,6 +68,7 @@
             { id: "b07", width: 12, top: 28, left: 64, img: "./assets/place.svg", meta: { test: 'abc' } },
             { width: 12, top: 56, left: 40, img: "./assets/home.svg" },
         ]
+
         let addPlaces = [
             { id: "3", width: 12, top: 70, left: 70, img: "./assets/info.svg", meta: { aaa: 'xyz' } },
             { id: "4", width: 12, top: 37, left: 16, img: "./assets/high-priority.svg" },
@@ -47,12 +88,23 @@
             countAdd++;
         }
 
-
         function randomActive() {
             markerMap.activeAll()
             const allMarkers = markerMap.getAll()
             const markerRand = allMarkers[Math.floor(Math.random() * allMarkers.length)];
             markerMap.inactive(markerRand.id)
+        }
+
+        function listData() {
+            const formatter = new JSONFormatter(markerMap.getAll());
+            document.getElementById("detail").innerHTML = ""
+            document.getElementById("detail").appendChild(formatter.render())
+        }
+
+        function reset() {
+            countAdd = 0
+            markerMap.destroy()
+            markerMap.render('#show', { background: "./assets/treasure-map.jpg", markers: markers })
         }
 
     </script>
