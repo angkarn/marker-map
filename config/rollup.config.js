@@ -30,6 +30,11 @@ export default [
                 file: pkg.module,
                 format: 'es',
             },
+            {
+                name: "MarkerMap",
+                file: pkg.browser,
+                format: 'umd',
+            },
         ]
     }
 ];
