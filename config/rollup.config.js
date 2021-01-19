@@ -32,7 +32,7 @@ export default [
             },
             {
                 name: "MarkerMap",
-                file: pkg.browser,
+                file: pkg.browser.replace(".min.js", ".js"),
                 format: 'umd',
             },
         ]
