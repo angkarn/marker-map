@@ -145,5 +145,11 @@ export default function MarkerMap() {
 
     this.destroy = () => {
         renderElm.innerHTML = ""
+        renderElm = null
+        countId = 1
+        allMarkersElm = null
+        markersElm = null
+        markers = []
+        countId = 1
     }
 }
