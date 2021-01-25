@@ -4,13 +4,15 @@ Marker Map is simple dynamic place marker by position to image and support respo
 
 ![enter image description here](https://github.com/angkarn/marker-map/raw/main/example/assets/screenshot.jpg)
 
-### Features!
+## Features!
   -  Custom marker image and background.
   - Set active or inactive of marker (will be opacity reduce).
   - You can build game or event like treasure hunt.
   - And it's responsive.
 
-### Usage
+### [Demo Example!](https://tues.cc/marker-map/example)
+
+## Usage
 
 NPM:
 ```bash
@@ -25,7 +27,7 @@ CDN:
 <script src="https://unpkg.com/marker-map"></script>
 ```
 
-### Quick start
+## Quick start
 Put html for render.
 ```html
 <div id="show"></div>
@@ -59,42 +61,41 @@ markerMap.render("#show", {
 })
 ```
 
-### Methods
+## Methods
 |Method|Description|
 |-|-|
-| .render(\<string> **query selector**, \<object> **render options**) | render with [*render options*](#render) |
-| .add(\<object> ***marker options***) | add marker [*marker options*](#marker) |
-| .remove(\<string> ***marker id***) | remove marker|
+| .render(`string` **query selector**, `object` **render options**) | render with [*render options*](#render) |
+| .add(`object` ***marker options***) | add marker [*marker options*](#marker) |
+| .remove(`string` ***marker id***) | remove marker|
 | .removeAll() | remove marker|
-| .active(\<string> ***marker id***) | set marker active|
-| .inactive(\<string> ***marker id***) | set marker inactive|
+| .active(`string` ***marker id***) | set marker active|
+| .inactive(`string` ***marker id***) | set marker inactive|
 |.activeAll()|set active all marker|
 |.inactiveAll()|set inactive all marker|
-|.getAll(\<string> **filter**, \<string> **output type**)|get list markers by **filter** `all` (default), `active`, `inactive` will return by **output type** `json` [*marker object*](#marker) (default), `dom` |
-|.on(\<string> **type event**, \<function> **callback function**)|create event on markers *(ex. click, hover)*, will return callback **event object**|
+|.getAll(`string` **filter**, `string` **output type**)|get list markers by **filter** `all` (default), `active`, `inactive` will return by **output type** `json` [*marker object*](#marker) (default), `dom` |
+|.on(`string` **type event**, `function` **callback function**)|create event on markers *(ex. click, hover)*, will return callback **event object**|
 |.destroy()|destroy render|
 
 
-### Options
+## Options
 
-#### Render:
+### Render:
 |Name|Type|Default|Description|
 |-|-|-|-|
-| background | string | required | background image path.
-| markers | array | [] | [*marker options*](#marker) array to include on render.|
-| inactiveOpacity | number | 0.6 | opacity markers when inactive (0 - 1).|
+| background | `string` | required | background image path.
+| markers | `array` | [] | [*marker options*](#marker) array to include on render.|
+| inactiveOpacity | `number` | 0.6 | opacity markers when inactive (0 - 1).|
 
-#### Marker:
+### Marker:
 |Name|Type|Default|Description|
 |-|-|-|-|
-| id | string | auto | will auto generate when empty.
-| width | number | required | set with import image by percent.
-| top | number | required | set potion from top by percent (0 - 100).
-| left | number | required | set position from left by percent (0 - 100).
-| img | string | required | marker image path.
-| meta | object | {} | add custom your meta data to marker.
+| id | `string` | auto | will auto generate when empty.
+| width | `number` | required | set with import image by percent.
+| top | `number` | required | set potion from top by percent (0 - 100).
+| left | `number` | required | set position from left by percent (0 - 100).
+| img | `string` | required | marker image path.
+| meta | `object` | {} | add custom your meta data to marker.
 
 License
 ----
-
 MIT
