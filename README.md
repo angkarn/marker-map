@@ -5,7 +5,7 @@ Marker Map is simple dynamic place marker by position to image and support respo
 ![enter image description here](https://github.com/angkarn/marker-map/raw/main/example/assets/screenshot.jpg)
 
 ## Features!
-  -  Custom marker image and background.
+  - Custom marker image and background.
   - Set active or inactive of marker (will be opacity reduce).
   - You can build game or event like treasure hunt.
   - And it's responsive.
@@ -73,7 +73,7 @@ markerMap.render("#show", {
 |.activeAll()|set active all marker|
 |.inactiveAll()|set inactive all marker|
 |.getAll(`string` **filter**, `string` **output type**)|get list markers by **filter** `all` (default), `active`, `inactive` will return by **output type** `json` [*marker object*](#marker) (default), `dom` |
-|.on(`string` **type event**, `function` **callback function**)|create event on markers *(ex. click, hover)*, will return callback **event object**|
+|.on(`string` **type event**, `function` **callback function**)|create event on markers *(e.g. click, hover)*, will return callback **event object**|
 |.destroy()|destroy render|
 
 
